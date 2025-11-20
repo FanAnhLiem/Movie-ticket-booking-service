@@ -1,0 +1,109 @@
+
+server:
+  tomcat:
+    max-part-count: 20
+  port: 8080
+  servlet:
+    context-path: /api
+
+
+spring:
+
+  ai:
+    openai:
+      api-key: ${GEMINI_KEY}
+
+      # Chat (OpenAI-compatible endpoints on Gemini)
+      chat:
+        base-url: https://generativelanguage.googleapis.com
+        completions-path: /v1beta/openai/chat/completions
+        options:
+          model: gemini-2.5-flash
+
+
+      # Embedding (OpenAI-compatible endpoints on Gemini)
+      embedding:
+        base-url: https://generativelanguage.googleapis.com
+        embeddings-path: /v1beta/openai/embeddings
+        metadata-mode: embed
+        options:
+          model: gemini-embedding-001
+          dimensions: 768
+
+
+    # vector db qdrant
+    vectorstore:
+      qdrant:
+        host: localhost
+        port: 6334
+        use-tls: false
+        initialize-schema: true
+        api-key:
+        collection-name: vector_store
+
+
+
+  datasource:
+    url: jdbc:mysql://localhost:3308/movie_ticket_booking
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+
+  data:
+    #redis
+    redis:
+      host: localhost
+      port: 6379
+      repositories:
+        enabled: false
+  session:
+    redis:
+      repository-type: default
+#  #kafka
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#    consumer:
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.trusted.packages: com.example.application_springboot_kafka.model.DTO,com.example.application_springboot_kafka.entity
+#    streams:
+#      bootstrap-servers: localhost:9092
+#      application-id: kafka-stream
+#      properties:
+#        default-key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+#        default-value-serde: org.springframework.kafka.support.serializer.JsonSerde
+#        spring.json.trusted.packages: com.example.application_springboot_kafka.model.DTO,com.example.application_springboot_kafka.entity
+##  autoconfigure:
+##    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+#  #send email
+#  mail:
+#    host: smtp.gmail.com
+#    port: 587
+#    username: quan44188@gmail.com
+#    password: olpq hgfy xgoc csjd
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true
+#  logging:
+#    level:
+#      org.springframework.kafka: DEBUG
+#      org.apache.kafka: INFO
+#      org.springframework.mail: TRACE
+
+#JWT
+jwt:
+  signerKey: ${JWT_SIGNER_KEY}

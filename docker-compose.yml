@@ -1,0 +1,131 @@
+services:
+  service:
+    image: movie-ticket-booking:1.0.2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+    environment:
+      # MySQL
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/${MYSQL_DB}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS}
+
+      # Redis
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+
+      # Qdrant
+      SPRING_AI_VECTORSTORE_QDRANT_HOST: qdrant
+      SPRING_AI_VECTORSTORE_QDRANT_PORT: 6334
+
+      # JWT Key
+      JWT_SIGNERKEY: ${JWT_SIGNER_KEY}
+
+      # AI Key
+      SPRING_AI_OPENAI_API_KEY: ${GEMINI_KEY}
+
+    depends_on:
+      - mysql
+      - redis
+      - qdrant
+    networks:
+      - booking_app
+
+# MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - booking_app
+
+    # Redis
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - booking_app
+
+# Qdrant
+  qdrant:
+    image: qdrant/qdrant:v1.13.2
+    container_name: qdrant
+    ports:
+      - "6333:6333"  # REST API (for dashboard and HTTP clients)
+      - "6334:6334"  # gRPC (for Spring AI)
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks:
+      - booking_app
+#  zookeeper:
+#    image: confluentinc/cp-zookeeper:7.5.0
+#    container_name: zookeeper
+#    environment:
+#      ZOOKEEPER_CLIENT_PORT: 2181
+#    networks:
+#      - booking_app
+#
+##KAFKA IMAGE
+#  kafka:
+#    image: confluentinc/cp-kafka:7.5.0
+#    container_name: kafka
+#    depends_on:
+#      - zookeeper
+#    ports:
+#      - "9092:9092"
+#    environment:
+#      KAFKA_BROKER_ID: 1
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+#      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+#      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+#    networks:
+#      - booking_app
+#
+##ELASTICSEARCH IMAGE
+#  elasticsearch:
+#    image: docker.elastic.co/elasticsearch/elasticsearch:8.12.2
+#    container_name: elasticsearch
+#    environment:
+#      - discovery.type=single-node
+#      - xpack.security.enabled=false   # tắt auth cho dev
+#      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+#    ports:
+#      - "9200:9200"
+#      - "9300:9300"
+#    volumes:
+#      - es_data:/usr/share/elasticsearch/data
+#
+#  kibana:
+#    image: kibana:8.12.2
+#    container_name: kibana
+#    ports:
+#      - "5601:5601"
+#    environment:
+#      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+#
+
+volumes:
+  mysql_data:
+  redis_data:
+  qdrant_storage:
+#  kafka_data:
+#  es_data:
+
+networks:
+  booking_app:
+    driver: bridge
