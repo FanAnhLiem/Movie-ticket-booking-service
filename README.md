@@ -79,7 +79,7 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
     Chatbot gọi hàm Java để truy vấn suất chiếu thực trong DB.
 
-    Chatbot có thể trả lời:
+  Chatbot có thể trả lời:
 
   "Chiếu phim abc ở xyz ngày dd/MM/yyyy (hôm nay, ngày mai,..) lúc mấy giờ?"
 
@@ -101,25 +101,24 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 1) Clone project
   git clone https://github.com/<your-username>/movie-ticket-booking-service.git
   cd movie-ticket-booking-service
-2) Tạo file .env:
-  DB_USER=root
-  DB_PASS=123456
-  MYSQL_DB=movie_ticket_booking
 
-  JWT_SIGNER_KEY=your_secret_key
-
-  GEMINI_KEY=your_gemini_api_key
-
-  VNP_TMN_CODE=...
-  VNP_HASH_SECRET=...
-  VNP_PAY_URL=...
-  VNP_RETURN_URL=...
-
-  QDRANT_HOST=qdrant
-  QDRANT_PORT=6333
-3) Chạy bằng Docker
+3) Tạo file .env:
+    DB_USER=root
+    DB_PASS=123456
+    MYSQL_DB=movie_ticket_booking
+    JWT_SIGNER_KEY=your_secret_key
+    GEMINI_KEY=your_gemini_api_key
+    VNP_TMN_CODE=...
+    VNP_HASH_SECRET=...
+    VNP_PAY_URL=...
+    VNP_RETURN_URL=...
+   QDRANT_HOST=qdrant
+    QDRANT_PORT=6333
+   
+4) Chạy bằng Docker
   docker compose up -d --build
-4) Chạy local
+
+5) Chạy local
   Chạy service bằng IDE intellij
 
   
