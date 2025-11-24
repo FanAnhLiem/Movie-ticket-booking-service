@@ -1,15 +1,15 @@
 🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
   Backend cho hệ thống đặt vé xem phim trực tuyến: quản lý phim, rạp, suất chiếu, ghế, giá vé, hóa đơn – tích hợp thanh toán VNPay và Chatbot AI (RAG + Tool Calling) hỗ trợ tìm suất chiếu.
 ✨ Tính năng nổi bật
-👤 Xác thực & Phân quyền
+👤 Xác thực & Phân quyền:
 
-  JWT Authentication + Role-based Authorization.
+      JWT Authentication + Role-based Authorization.
 
-  Bộ lọc JwtRequestFilter, JwtTokenUtil, CustomUserDetailsService.
+      Bộ lọc JwtRequestFilter, JwtTokenUtil, CustomUserDetailsService.
 
-  Mã hóa mật khẩu, validation đầy đủ.
+      Mã hóa mật khẩu, validation đầy đủ.
 
-  Hỗ trợ TOTP (2FA-ready).
+      Hỗ trợ TOTP (2FA-ready).
 
 🎥 Quản lý phim & rạp
 
@@ -99,9 +99,9 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
 🚀 Hướng dẫn chạy dự án
 1) Clone project:
-  git clone https://github.com/<your-username>/movie-ticket-booking-service.git
+      git clone https://github.com/<your-username>/movie-ticket-booking-service.git
 
-  cd movie-ticket-booking-service
+      cd movie-ticket-booking-service
 
 3) Tạo file .env:
     DB_USER=root
@@ -127,9 +127,9 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
     QDRANT_PORT=6333
    
 5) Chạy bằng Docker:
-    docker compose up -d --build
+      docker compose up -d --build
 
 6) Chạy local
-    Chạy service bằng IDE intellij
+      Chạy service bằng IDE intellij
 
   
