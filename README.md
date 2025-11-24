@@ -47,17 +47,17 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
 💳 Thanh toán VNPay
 
-  Tích hợp VNPay đầy đủ:
+    Tích hợp VNPay đầy đủ:
 
-  Sinh URL thanh toán
+      Sinh URL thanh toán
 
-  Kiểm tra checksum
+      Kiểm tra checksum
 
-  Xử lý callback
+      Xử lý callback
 
   Trạng thái đơn cập nhật tự động sau thanh toán.
 
-⚡ Hiệu năng & mở rộng
+⚡ Hiệu năng & mở rộng:
 
   Redis làm caching + lưu ChatMemory.
 
@@ -69,16 +69,57 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
   Implement bằng Spring AI + Gemini API:
 
-  Vector DB (Qdrant) lưu embedding của phim & rạp.
+    Vector DB (Qdrant) lưu embedding của phim & rạp.
 
-  RAG Ingestion: đọc dữ liệu MySQL → chunk → embed → push Qdrant.
+    RAG Ingestion: đọc dữ liệu MySQL → chunk → embed → push Qdrant.
 
-  Redis ChatMemory: ghi nhớ hội thoại.
+    Redis ChatMemory: ghi nhớ hội thoại.
 
   Tool Calling:
 
     Chatbot gọi hàm Java để truy vấn suất chiếu thực trong DB.
 
-  Chatbot có thể trả lời:
+    Chatbot có thể trả lời:
 
   "Chiếu phim abc ở xyz ngày dd/MM/yyyy (hôm nay, ngày mai,..) lúc mấy giờ?"
+
+🧱 Công nghệ sử dụng
+| Nhóm       | Công nghệ                           |
+| ---------- | ----------------------------------- |
+| Ngôn ngữ   | Java 21                            |
+| Framework  | Spring Boot 3.x                     |
+| Bảo mật    | Spring Security, JWT                |
+| Database   | MySQL 8.x                           |
+| ORM        | Spring Data JPA                     |
+| Cache      | Redis                               |
+| AI         | Spring AI, Gemini, Qdrant Vector DB |
+| Công cụ    | ModelMapper, Lombok                 |
+| DevOps     | Docker & Docker Compose             |
+| Thanh toán | VNPay                               |
+
+🚀 Hướng dẫn chạy dự án
+1) Clone project
+  git clone https://github.com/<your-username>/movie-ticket-booking-service.git
+  cd movie-ticket-booking-service
+2) Tạo file .env:
+  DB_USER=root
+  DB_PASS=123456
+  MYSQL_DB=movie_ticket_booking
+
+  JWT_SIGNER_KEY=your_secret_key
+
+  GEMINI_KEY=your_gemini_api_key
+
+  VNP_TMN_CODE=...
+  VNP_HASH_SECRET=...
+  VNP_PAY_URL=...
+  VNP_RETURN_URL=...
+
+  QDRANT_HOST=qdrant
+  QDRANT_PORT=6333
+3) Chạy bằng Docker
+  docker compose up -d --build
+4) Chạy local
+  Chạy service bằng IDE intellij
+
+  
