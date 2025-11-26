@@ -71,7 +71,7 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
   Implement bằng Spring AI + Gemini API:
 
-    Vector DB (Qdrant) lưu embedding của phim & rạp.
+    Vector DB (Qdrant) lưu embedding của phim & rạp, phòng chiếu.
 
     RAG Ingestion: đọc dữ liệu MySQL → chunk → embed → push Qdrant.
 
@@ -81,17 +81,13 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
     Chatbot gọi hàm Java để truy vấn suất chiếu thực trong DB.
 
-  Chatbot có thể trả lời:
-
-  "Chiếu phim abc ở xyz ngày dd/MM/yyyy (hôm nay, ngày mai,..) lúc mấy giờ?"
-
 🧱 Công nghệ sử dụng
 | Nhóm       | Công nghệ                           |
 | ---------- | ----------------------------------- |
-| Ngôn ngữ   | Java 21                            |
-| Framework  | Spring Boot 3.x                     |
+| Ngôn ngữ   | Java                                |
+| Framework  | Spring Boot                         |
 | Bảo mật    | Spring Security, JWT                |
-| Database   | MySQL 8.x                           |
+| Database   | MySQL                               |
 | ORM        | Spring Data JPA                     |
 | Cache      | Redis                               |
 | AI         | Spring AI, Gemini, Qdrant Vector DB |
