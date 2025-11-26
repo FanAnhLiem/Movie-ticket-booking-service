@@ -1,6 +1,8 @@
 🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
   Backend cho hệ thống đặt vé xem phim trực tuyến: quản lý phim, rạp, suất chiếu, ghế, giá vé, hóa đơn – tích hợp thanh toán VNPay và Chatbot AI (RAG + Tool Calling) hỗ trợ tìm suất chiếu.
-✨ Tính năng nổi bật
+
+✨ Tính năng nổi bậ
+
 👤 Xác thực & Phân quyền:
 
       JWT Authentication + Role-based Authorization.
