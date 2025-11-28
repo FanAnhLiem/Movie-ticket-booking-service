@@ -1,4 +1,4 @@
-<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/c6fb08ea-93fc-4940-b608-9cf54c2eb2ee" />🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
+🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
   Backend cho hệ thống đặt vé xem phim trực tuyến: quản lý phim, rạp, suất chiếu, ghế, giá vé, hóa đơn – tích hợp thanh toán VNPay và Chatbot AI (RAG + Tool Calling) hỗ trợ tìm suất chiếu.
 
 ✨ Tính năng nổi bậ
@@ -154,7 +154,7 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
     Quản lý loại phòng chiếu
 
-    <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/46278673-2158-4717-a08b-fa7d22ac7cc6" />
+  <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/46278673-2158-4717-a08b-fa7d22ac7cc6" />
 
     Quản lý Ghế
 
@@ -180,4 +180,4 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 
     Thanh toán
 
-    <img width="1919" height="870" alt="image" src="https://github.com/user-attachments/assets/9d57df81-2c5a-4d1b-a79c-acf92cc92ddc" />
+  <img width="1919" height="870" alt="image" src="https://github.com/user-attachments/assets/9d57df81-2c5a-4d1b-a79c-acf92cc92ddc" />
