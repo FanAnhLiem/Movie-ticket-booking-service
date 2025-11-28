@@ -1,4 +1,4 @@
-🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
+<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/c6fb08ea-93fc-4940-b608-9cf54c2eb2ee" />🎬 Hệ Thống Đặt Vé Xem Phim – Backend (Spring Boot)
   Backend cho hệ thống đặt vé xem phim trực tuyến: quản lý phim, rạp, suất chiếu, ghế, giá vé, hóa đơn – tích hợp thanh toán VNPay và Chatbot AI (RAG + Tool Calling) hỗ trợ tìm suất chiếu.
 
 ✨ Tính năng nổi bậ
@@ -130,4 +130,54 @@ Ngăn đặt trùng ghế bằng xử lý giao dịch.
 6) Chạy local
       Chạy service bằng IDE intellij
 
-  
+7) Hình ảnh kết quả đạt được sau khi chạy ứng dụng:
+
+     Thống kê doanh thu theo phim
+
+<img width="1918" height="870" alt="image" src="https://github.com/user-attachments/assets/8048f0dc-ab1c-46d0-960d-0994fed6b885" />
+
+    Thống kê doanh thu theo rạp
+
+<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/a1efff6f-275e-4292-870e-6dabbba1ce62" />
+
+    Quản lý phim
+
+<img width="1919" height="870" alt="image" src="https://github.com/user-attachments/assets/b29c2177-6b75-4ab2-9ef2-2fc4b95d0584" />
+
+    Quản lý rạp
+
+<img width="1919" height="870" alt="image" src="https://github.com/user-attachments/assets/0c70109c-dccb-4be4-8a80-5230cd7941fe" />
+
+    Quản lý phòng chiếu
+
+  <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/c3cb3402-e673-46cb-8efb-7eb1cb03f777" />
+
+    Quản lý loại phòng chiếu
+
+    <img width="1919" height="871" alt="image" src="https://github.com/user-attachments/assets/46278673-2158-4717-a08b-fa7d22ac7cc6" />
+
+    Quản lý Ghế
+
+  <img width="1915" height="870" alt="image" src="https://github.com/user-attachments/assets/f770b631-27b0-4d39-8088-c613599255e5" />
+
+    Quản lý suất chiếu
+
+  <img width="1919" height="866" alt="image" src="https://github.com/user-attachments/assets/476c1a90-11ef-4968-822f-d96142fd9d78" />
+
+    Quản lý giá vé
+
+  <img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/de6bfada-9d93-4d33-9fac-60a462bba15b" />
+
+    Quản lý đơn hàng
+
+  <img width="1919" height="868" alt="image" src="https://github.com/user-attachments/assets/210fe286-a84c-4bbf-b9e3-f4e59d0b5c93" />
+
+    Chatbot
+
+  <img width="1919" height="872" alt="image" src="https://github.com/user-attachments/assets/01d90498-3921-4877-9ae9-4f7e34965d19" />
+
+  <img width="1918" height="870" alt="image" src="https://github.com/user-attachments/assets/414031d3-a979-4ab0-8f6f-c27ece4708f2" />
+
+    Thanh toán
+
+    <img width="1919" height="870" alt="image" src="https://github.com/user-attachments/assets/9d57df81-2c5a-4d1b-a79c-acf92cc92ddc" />
